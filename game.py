@@ -17,9 +17,9 @@ while count_attempt < attempt:
             print('Угадал!')
             break
         elif a > str(kompukter):
-            print('Загаданое число меньше!')
-        elif a < str(kompukter):
             print('Загаданое число больше!')
+        elif a < str(kompukter):
+            print('Загаданое число меньше!')
         a = input()
 if count_attempt == attempt:
     print("Попытки кончились")
