@@ -23,10 +23,10 @@ while count_attempt < attempt:
             print('Загаданое компуктером число больше Вашего числа!')
             print('у Вас осталось попыток:' + str(attempt+1 - count_attempt))
         a = input()
-if count_attempt == attempt:
-    again = input('У вас кончились попытки :( Вы так и не угадали. Хотите сыграть еще раз? (Да/Нет)').lower()
-else:
-    again = input('Игра окончена! Хотите сыграть еще раз? (Да/Нет)').lower()
+    if count_attempt == attempt:
+        again = input('У вас кончились попытки :( Вы так и не угадали. Хотите сыграть еще раз? (Да/Нет)').lower()
+    else:
+        again = input('Игра окончена! Хотите сыграть еще раз? (Да/Нет)').lower()
 if again == 'да':
     True
     continue
