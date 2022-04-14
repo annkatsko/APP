@@ -14,7 +14,6 @@ while game:
                 print('Вы ввели букву или символ. Введите Число!')
                 user_number = input()
             else:
-                count_attempt += 1
                 if user_number == str(kompukter):
                     print('Вы угадали!')
                     break
@@ -25,17 +24,18 @@ while game:
                     print('Загаданое компуктером число больше Вашего числа!')
                     print('у Вас осталось попыток:' + str(attempt+1 - count_attempt))
                 user_number = input()
-        elif count_attempt == attempt:
+                count_attempt += 1
+        else:
             user_answer = input('У вас кончились попытки :( Вы так и не угадали. Хотите сыграть еще раз? (Да/Нет)').lower()
             if user_answer == 'нет':
                 print('Вы вышли из игры')
                 game = False
             elif user_answer == 'да':
                 continue
-        else:
-            user_answer = input('Хотите сыграть еще раз? (Да/Нет)').lower()
-            if user_answer == 'нет':
-                print('Вы вышли из игры')
-                game = False
-            elif user_answer == 'да':
-                continue
+            else:
+                user_answer = input('Хотите сыграть еще раз? (Да/Нет)').lower()
+                if user_answer == 'нет':
+                    print('Вы вышли из игры')
+                    game = False
+                elif user_answer == 'да':
+                    continue
