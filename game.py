@@ -3,8 +3,8 @@ import random
 
 game = True
 raund = True
-count_attempt = 1
 while game:
+    count_attempt = 1
     attempt = 3
     kompukter = random.randint(1, 100)
     print(kompukter)
@@ -17,6 +17,7 @@ while game:
         if user_number == str(kompukter):
             print('Вы угадали!')
             raund = False
+            break
         elif user_number > str(kompukter):
             print('Загаданое компуктером число меньше Вашего числа!')
             print('У Вас осталось попыток:' + str(attempt - count_attempt))
@@ -25,10 +26,11 @@ while game:
             print('у Вас осталось попыток:' + str(attempt - count_attempt))
         if count_attempt == attempt:
             raund = False
+            continue
         count_attempt +=1
-    user_answer = input('Хотите сыграть еще раз? (Да/Нет)').lower()
-    if user_answer == 'нет':
-        print('Вы вышли из игры')
-        game = False
-    elif user_answer == 'да':
-        raund = True
+    while user_answer = input('Хотите сыграть еще раз? (Да/Нет)').lower()
+        if user_answer == 'нет':
+            print('Вы вышли из игры')
+            game = False
+        elif user_answer == 'да':
+            raund = True
