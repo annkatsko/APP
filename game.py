@@ -16,14 +16,13 @@ while game:
             user_number = input()
         if user_number == str(kompukter):
             print('Вы угадали!')
-            break
+            raund = False
         elif user_number > str(kompukter):
             print('Загаданое компуктером число меньше Вашего числа!')
             print('У Вас осталось попыток:' + str(attempt - count_attempt))
-        elif user_number < str(kompukter):
+        else:
             print('Загаданое компуктером число больше Вашего числа!')
             print('у Вас осталось попыток:' + str(attempt - count_attempt))
-        user_number = input()
         if count_attempt == attempt:
             raund = False
     user_answer = input('Хотите сыграть еще раз? (Да/Нет)').lower()
@@ -31,4 +30,4 @@ while game:
         print('Вы вышли из игры')
         game = False
     elif user_answer == 'да':
-        continue
+        raund = True
