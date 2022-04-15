@@ -2,30 +2,28 @@ import random
 
 
 game = True
-raund = True
+round = True
 while game:
     count_attempt = 1
-    attempt = 3
-    kompukter = random.randint(1, 100)
-    print(kompukter)
-    raund = True
-    while raund:
+    attempt = 5
+    computer = random.randint(1, 100)
+    while round:
         user_number = input('Компуктер загадал число. Введите свое число!')
         while not user_number.isnumeric():
             print('Вы ввели букву или символ. Введите Число!')
             user_number = input()
-        if user_number == str(kompukter):
+        if user_number == str(computer):
             print('Вы угадали!')
             raund = False
             break
-        elif user_number > str(kompukter):
+        elif user_number > str(computer):
             print('Загаданое компуктером число меньше Вашего числа!')
             print('У Вас осталось попыток:' + str(attempt - count_attempt))
         else:
             print('Загаданое компуктером число больше Вашего числа!')
-            print('у Вас осталось попыток:' + str(attempt - count_attempt))
+            print('У Вас осталось попыток:' + str(attempt - count_attempt))
         if count_attempt == attempt:
-            raund = False
+            round = False
         count_attempt += 1
     while 1:
         user_answer = input('Хотите сыграть еще раз? (Да/Нет)').lower()
