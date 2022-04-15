@@ -2,11 +2,11 @@ import random
 
 
 game = True
-round = True
 while game:
     count_attempt = 1
     attempt = 5
     computer = random.randint(1, 100)
+    round = True
     while round:
         user_number = input('Компуктер загадал число. Введите свое число!')
         while not user_number.isnumeric():
@@ -24,6 +24,7 @@ while game:
             print('У Вас осталось попыток:' + str(attempt - count_attempt))
         if count_attempt == attempt:
             round = False
+            print('Правильный ответ:' + str(computer))
             break
         count_attempt += 1
     while 1:
