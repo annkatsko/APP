@@ -24,6 +24,7 @@ while game:
             print('У Вас осталось попыток:' + str(attempt - count_attempt))
         if count_attempt == attempt:
             round = False
+            break
         count_attempt += 1
     while 1:
         user_answer = input('Хотите сыграть еще раз? (Да/Нет)').lower()
@@ -32,7 +33,6 @@ while game:
             game = False
             break
         elif user_answer == 'да':
-            raund = True
             break
         else:
             print('Kоманда не совсем понятна, повторите')
