@@ -32,5 +32,9 @@ while game:
         if user_answer == 'нет':
             print('Вы вышли из игры')
             game = False
+            break
         elif user_answer == 'да':
             raund = True
+            break
+        else:
+            print('Kоманда не совсем понятна, повторите')
