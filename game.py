@@ -6,15 +6,15 @@ while game:
     count_attempt = 1
     attempt = 5
     computer = random.randint(1, 100)
-    round = True
-    while round:
+    game_round = True
+    while game_round:
         user_number = input('Компьютер загадал число. Введите свое число!')
         while not user_number.isnumeric():
             print('Вы ввели букву или символ. Введите число!')
             user_number = input()
         if user_number == str(computer):
             print('Вы угадали!')
-            round = False
+            game_round = False
             break
         elif user_number > str(computer):
             print('Загаданое компьютером число меньше Вашего числа!')
@@ -24,7 +24,7 @@ while game:
             print('У Вас осталось попыток:' + str(attempt - count_attempt))
         if count_attempt == attempt:
             print('Правильный ответ:' + str(computer))
-            round = False
+            game_round = False
             break
         count_attempt += 1
     while 1:
