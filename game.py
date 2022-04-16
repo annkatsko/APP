@@ -23,8 +23,8 @@ while game:
             print('Загаданое компьютером число больше Вашего числа!')
             print('У Вас осталось попыток:' + str(attempt - count_attempt))
         if count_attempt == attempt:
-            round = False
             print('Правильный ответ:' + str(computer))
+            round = False
             break
         count_attempt += 1
     while 1:
