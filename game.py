@@ -8,19 +8,19 @@ while game:
     computer = random.randint(1, 100)
     round = True
     while round:
-        user_number = input('Компуктер загадал число. Введите свое число!')
+        user_number = input('Компьютер загадал число. Введите свое число!')
         while not user_number.isnumeric():
-            print('Вы ввели букву или символ. Введите Число!')
+            print('Вы ввели букву или символ. Введите число!')
             user_number = input()
         if user_number == str(computer):
             print('Вы угадали!')
-            raund = False
+            round = False
             break
         elif user_number > str(computer):
-            print('Загаданое компуктером число меньше Вашего числа!')
+            print('Загаданое компьютером число меньше Вашего числа!')
             print('У Вас осталось попыток:' + str(attempt - count_attempt))
         else:
-            print('Загаданое компуктером число больше Вашего числа!')
+            print('Загаданое компьютером число больше Вашего числа!')
             print('У Вас осталось попыток:' + str(attempt - count_attempt))
         if count_attempt == attempt:
             round = False
