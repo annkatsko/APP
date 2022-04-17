@@ -10,8 +10,8 @@ def func(email):
             else:
                 print('НЕТ')
                 break
-
-em=input()            
+gjbjn
+em = input()            
 func(em)
 
 
