@@ -1,14 +1,15 @@
 import random
 
-count_attempt = 1
-attempt = 5
-computer = random.randint(1, 100)
-user_number = input('Компьютер загадал число. Введите свое число! Чтобы получить подсказку дипазона чисел введите "?"')
+
 
 
 def main():
     game = True
     while game:
+        count_attempt = 1
+        attempt = 5
+        computer = random.randint(1, 100)
+        user_number = input('Компьютер загадал число. Введите свое число! Чтобы получить подсказку дипазона чисел введите "?"')
         game_round = True
         while game_round:
             while not user_number.isnumeric() and not user_number == '?':
@@ -48,12 +49,13 @@ def left_attempt():
 
 
 def check_answer():
-    if user_number > computer:
-        print('Загаданое компьютером число меньше Вашего числа!')
-        left_attempt()
-    else:
-        print('Загаданое компьютером число больше Вашего числа!')
-        left_attempt()
+    pass
+    #if user_number > computer:
+      #  print('Загаданое компьютером число меньше Вашего числа!')
+      #  left_attempt()
+    #else:
+        #print('Загаданое компьютером число больше Вашего числа!')
+        #left_attempt()
 
 
 main()
