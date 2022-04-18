@@ -1,34 +1,17 @@
 import random
 
+def main(attempt):
+    game = True
+    while game:
+        count_attempt = 1
+        computer = random.randint(1, 100)
+        check_answer()
+        new_game()
 
-game = True
-while game:
-    count_attempt = 1
-    attempt = 5
-    computer = random.randint(1, 100)
-    game_round = True
-    while game_round:
-        user_number = input('Компьютер загадал число. Введите свое число!')
-        while not user_number.isnumeric():
-            print('Вы ввели букву или символ. Введите число!')
-            user_number = input()
-        if user_number == str(computer):
-            print('Вы угадали!')
-            game_round = False
-            break
-        elif user_number > str(computer):
-            print('Загаданое компьютером число меньше Вашего числа!')
-            print('У Вас осталось попыток:' + str(attempt - count_attempt))
-        else:
-            print('Загаданое компьютером число больше Вашего числа!')
-            print('У Вас осталось попыток:' + str(attempt - count_attempt))
-        if count_attempt == attempt:
-            print('Правильный ответ:' + str(computer))
-            game_round = False
-            break
-        count_attempt += 1
+        
+def new_game(user_unswer):
     while 1:
-        user_answer = input('Хотите сыграть еще раз? (Да/Нет)').lower()
+        print('Хотите сыграть еще раз? (Да/Нет)')
         if user_answer == 'нет':
             print('Вы вышли из игры')
             game = False
@@ -37,3 +20,40 @@ while game:
             break
         else:
             print('Kоманда не совсем понятна, повторите')
+
+
+def left_attempt():
+    print('У Вас осталось попыток:' + str(attempt - count_attempt))
+
+
+def check_answer():
+    game_round = True
+    while game_round:
+        user_number = input('Компьютер загадал число. Введите свое число! Чтобы получить подсказку дипазона чисел введите "?"')
+        while not user_number.isnumeric() and not user_number == '?':
+            print('Вы ввели букву или символ. Введите число!')
+            user_number = input()
+        if user_number == '?':
+            print('Диапазон чисел от ' + str(computer - 10) + ' до ' + str(computer + 12) + ' У вас осталось попыток: ' + str(attempt+1 - count_attempt)) if computer > 10 else print('Диапазон чисел от ' + str(1) + ' до ' + str(computer + 10) + ' У вас осталось попыток: ' + str(attempt+1 - count_attempt))
+            continue
+        if user_number == str(computer):
+            print('Вы угадали!')
+            game_round = False
+            break
+        elif user_number > str(computer):
+            print('Загаданое компьютером число меньше Вашего числа!')
+            left_attempt()
+        else:
+            print('Загаданое компьютером число больше Вашего числа!')
+            left_attempt()
+        if count_attempt == attempt:
+            print('Правильный ответ:' + str(computer))
+            game_round = False
+            break
+        count_attempt += 1
+
+
+
+
+
+main(3)
