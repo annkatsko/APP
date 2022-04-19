@@ -1,13 +1,10 @@
 import random
 
 
-
-
 def main():
     game = True
     while game:
         count_attempt = 1
-        attempt = 5
         computer = random.randint(1, 100)
         user_number = input('Компьютер загадал число. Введите свое число! Чтобы получить подсказку дипазона чисел введите "?"')
         game_round = True
@@ -24,11 +21,13 @@ def main():
                 break
             check_answer()
             if count_attempt == attempt:
+                left_attempt()
                 print('Правильный ответ:' + str(computer))
                 game_round = False
                 break
             count_attempt += 1
         new_game()
+        return count_attempt
 
 
 def new_game():
@@ -45,17 +44,17 @@ def new_game():
 
 
 def left_attempt():
+    attempt = 5
+    count_attempt = main()
     print('У Вас осталось попыток:' + str(attempt - count_attempt))
 
 
 def check_answer():
-    pass
-    #if user_number > computer:
-      #  print('Загаданое компьютером число меньше Вашего числа!')
-      #  left_attempt()
-    #else:
-        #print('Загаданое компьютером число больше Вашего числа!')
-        #left_attempt()
+    if user_number > computer:
+       print('Загаданое компьютером число меньше Вашего числа!')
+    else:
+        print('Загаданое компьютером число больше Вашего числа!') 
+    left_attempt()
 
 
 main()
