@@ -5,6 +5,7 @@ def main():
     game = True
     while game:
         count_attempt = 1
+        attempt = 5
         computer = random.randint(1, 100)
         user_number = input('Компьютер загадал число. Введите свое число! Чтобы получить подсказку дипазона чисел введите "?"')
         game_round = True
@@ -44,7 +45,6 @@ def new_game():
 
 
 def left_attempt():
-    attempt = 5
     count_attempt = main()
     print('У Вас осталось попыток:' + str(attempt - count_attempt))
 

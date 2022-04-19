@@ -1,7 +1,8 @@
-def numbers(number):
-    f = {0: 'ноль', 1 : 'один', 2 : 'два', 3 : 'три', 4 : 'четыре', 5 : 'пять',
-    6 : 'шесть', 7 : 'семь', 8 : 'восемь', 9 : 'девять'}
-    print(f[number])
+def main(number):
+    f = {0: '"null"', 1 : '"one"', 2 : '"two"', 3 : '"three"', 4 : '"four"', 5 : '"five"',
+    6 : '"six"', 7 : '"seven"', 8 : '"eight"', 9 : '"nine"'}
+    return f[number]
 
 
-numbers(5)
+a = main(5)
+print(a)
