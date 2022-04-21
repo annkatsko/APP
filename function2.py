@@ -1,5 +1,6 @@
 def func(a, b):
-    s = [i for i in a if i in b]
-    print(*s)
+    
+    print({i for i in a if i in b})
+    
 
-func('aa2d', 'dg22')
+func('daaaa11', 'da1')
