@@ -1,6 +1,17 @@
-def func(a, b):
-    
-    print({i for i in a if i in b})
-    
+from re import I
 
-func('daaaa11', 'da1')
+
+def func(a, b):
+    s=[]
+    i = 0
+    while i!=len(a) and i!=len(b):
+        for j in a:
+            if j in b:
+                s+=j
+                break
+        i+=1
+
+    print(*s)
+
+    
+func('daaa', 'daaaa')
