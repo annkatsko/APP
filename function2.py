@@ -1,14 +1,9 @@
-from re import I
-
-
 def func(a, b):
     s=[]
     i = 0
     while i!=len(a) and i!=len(b):
-        for j in a:
-            if j in b:
-                s+=j
-                break
+        if a[i] in b:
+            s+=a[i]
         i+=1
 
     print(*s)
