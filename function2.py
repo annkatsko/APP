@@ -9,4 +9,4 @@ def func(a, b):
     print(*s)
 
     
-func('daaa', 'daaaa')
+func('daa', 'daaaa')
